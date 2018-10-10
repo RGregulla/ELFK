@@ -1,0 +1,49 @@
+version: '3.7'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    container_name: elasticsearch
+    networks:
+      docker-elk:
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.2
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+        - "ELASTICSEARCH_URL=http://elasticsearch:9200"
+    networks:
+        - docker-elk
+    depends_on:
+        - elasticsearch
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.4.2
+    container_name: logstash
+    networks:
+      - docker-elk
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./logstash/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+      - ./logstash/loginput/sample_input.txt:/opt/logs/sample_input.txt:ro
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+
+  fluentd:
+    build:
+      context: fluentd/
+    container_name: fluentd
+    networks:
+      - docker-elk
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./fluentd/config/fluent.conf:/fluentd/etc/fluent.conf:ro
+      - ./fluentd/data/sample_log.txt:/opt/sample_logs/sample_log.txt:ro
+
+networks:
+  docker-elk:
+    driver: bridge

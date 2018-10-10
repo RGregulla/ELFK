@@ -1,0 +1,6 @@
+{"date":"2018-10-10 15:20:00", "severity":"INFO", "msg":"Bar was successful"}
+{"date":"2018-10-10 15:30:00", "severity":"INFO", "msg":"Bar was successful"}
+{"date":"2018-10-10 15:30:00", "severity":"WARN", "msg":"Bar was successful"}
+{"date":"2018-10-10 15:30:00", "call":"/shop/login", "response_time":10}
+{"date":"2018-10-10 15:31:00", "call":"/shop/login", "response_time":15}
+{"date":"2018-10-10 15:32:00", "call":"/shop/login", "response_time":12}
