@@ -27,7 +27,7 @@ services:
       - elasticsearch
     volumes:
       - ./logstash/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
-      - ./logstash/loginput/sample_input.txt:/opt/logs/sample_input.txt:ro
+      - ./logstash/data/sample_input.txt:/opt/logs/sample_input.txt:ro
     ports:
       - "5000:5000"
       - "9600:9600"

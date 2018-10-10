@@ -1,6 +1,6 @@
 {"date":"2018-10-10 15:20:00", "severity":"INFO", "msg":"Bar was successful"}
 {"date":"2018-10-10 15:31:00", "call":"/shop/login", "response_time":15}
-{"date":"2018-10-10 15:20:00", "severity":"INFO", "msg":"Bar was successful"}
-{"date":"2018-10-10 15:31:00", "call":"/shop/login", "response_time":15}
-{"date":"2018-10-10 15:40:00", "severity":"INFO", "msg":"Bar was successful"}
-{"date":"2018-10-10 15:41:00", "call":"/shop/login", "response_time":15}
+{"date":"2018-10-10 15:41:00", "call":"/shop/login", "response_time":19}
+{"date":"2018-10-10 15:41:00", "call":"/shop/login", "response_time":12}
+{"date":"2018-10-10 15:41:00", "call":"/shop/login", "response_time":18}
+{"date":"2018-10-10 15:41:00", "call":"/shop/login", "response_time":19}
